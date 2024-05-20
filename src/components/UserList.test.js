@@ -19,8 +19,9 @@ test("render correct table headers", () => {
 });
 
 test("render one row per user", () => {
-  render(<UserList users={users} />);
-  const rows = within(screen.getByTestId("users")).getAllByRole("row");
+  const { container } = render(<UserList users={users} />);
+  const rows = container.querySelectorAll("tbody tr");
+  // const rows = within(screen.getByTestId("users")).getAllByRole("row");
   expect(rows).toHaveLength(2);
-  screen.logTestingPlaygroundURL();
+  // screen.logTestingPlaygroundURL();
 });
