@@ -1,6 +1,9 @@
 import { render, screen, within } from "@testing-library/react";
 import ColorList from "./ColorList";
 
+// favor using getBy when an element exist and queryBy to verify that an element does not exist
+// favor using findBy when an element will eventually exist
+
 test("finding 0 element with getBY, queryBy and findBy", async () => {
   render(<ColorList />);
 
